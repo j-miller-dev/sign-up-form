@@ -3,6 +3,26 @@
   src: url(Norse-Bold.otf);
 }
 
+@font-face {
+  font-family: "Lato";
+  src: url(Lato-Regular.ttf);
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h2 {
+  font-family: "Lato", sans-serif;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+}
+
+.right-container p {
+  font-family: "Lato", sans-serif;
+}
 /* reset */
 * {
   margin: 0;
@@ -57,6 +77,7 @@ p {
   font-size: 20px;
   max-width: 500px;
   margin-bottom: 2rem;
+  padding-left: 2rem;
 }
 
 .right-container {
@@ -71,7 +92,7 @@ p {
 }
 
 .form-container {
-  background-color: white;
+  background-color: rgba(245, 245, 245, 0.387);
   width: 100%;
   border: rgba(0, 0, 0, 0.923);
 }
@@ -81,6 +102,39 @@ form {
   grid-template-columns: 1fr 1fr;
   width: 600px;
   padding: 2rem;
+}
+
+/* .form-group input[type="text"]:invalid,
+.form-group input[type="email"]:invalid,
+.form-group input[type="password"]:invalid,
+.form-group input[type="tel"]:invalid {
+  border: 1px solid #d55c5f;
+  color: #d55c5f;
+  box-shadow: none;
+} */
+/* Remove default red glow in Firefox */
+
+/* .form-group input[type="password"]:invalid {
+  border: 1px solid #d55c5f;
+  color: #d55c5f;
+  box-shadow: none; 
+} */
+
+.form-group input[type="text"]:valid,
+.form-group input[type="email"]:valid,
+.form-group input[type="password"]:valid,
+.form-group input[type="tel"]:valid {
+  border: 1px solid #8adc3d;
+  color: #8adc3d;
+  box-shadow: none; /* Remove default red glow in Firefox */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="tel"]:focus {
+  border: 1px solid #161617;
+  box-shadow: none; /* Remove default red glow in Firefox */
 }
 
 .form-group {
@@ -95,12 +149,31 @@ input {
   padding: 0.5rem;
 }
 
+input:focus {
+  outline: none !important;
+  border: 1px solid green;
+  box-shadow: 0 0 10px #719ece;
+}
+
 label {
   color: rgba(0, 0, 0, 0.678);
-  font-size: 15px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
 h2 {
   margin: 2rem;
+}
+
+.submit-button {
+  background-color: #161617;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+  width: 200px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 2rem;
 }

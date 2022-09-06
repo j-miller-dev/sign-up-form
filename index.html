@@ -23,49 +23,96 @@
         <p>You know you want some.</p>
         <div class="form-container">
           <h2>Let's do it!</h2>
-          <form action="">
+          <form action="" onSubmit="return validateForm()">
             <div class="form-group">
               <label for="name">First Name</label>
-              <input type="text" id="name" placeholder="Enter your name" />
+              <input
+                required
+                autocomplete="off"
+                type="text"
+                id="name1"
+                placeholder="Enter your first name"
+              />
+              <span id="blankMsg" style="color: red"> </span> <br /><br />
             </div>
             <div class="form-group">
               <label for="name">Last Name</label>
-              <input type="text" id="name" placeholder="Enter your name" />
+              <input
+                required
+                type="text"
+                id="name2"
+                placeholder="Enter your last name"
+                autocomplete="off"
+              />
+              <span id="charMsg" style="color: red"> </span> <br /><br />
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" placeholder="Enter your email" />
+              <input
+                required
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                autocomplete="off"
+              />
             </div>
             <div class="form-group">
               <label for="phone">Phone</label>
               <input
+                required
                 type="tel"
                 id="phone"
                 placeholder="Enter your phone number"
+                autocomplete="off"
+                patter="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
               />
             </div>
 
             <div class="form-group">
               <label for="password">Password</label>
               <input
+                id="pswd1"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                required
+                value=""
                 type="password"
                 id="password"
-                placeholder="Enter your
-              password"
+                placeholder="eg. luna@gmail.com"
+                autocomplete="off"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
               />
+              <span id="message1" style="color: red"> </span> <br /><br />
             </div>
             <div class="form-group">
               <label for="password">Confirm Password</label>
               <input
+                id="pswd2"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                required
+                value=""
                 type="password"
                 id="password"
-                placeholder="Enter your
-                password"
+                placeholder="Confirm your password"
+                autocomplete="off"
+                title="Passwords must be identical"
               />
+              <span id="message2" style="color: red"> </span> <br /><br />
             </div>
+            <button
+              class="submit-button"
+              id="submit-button"
+              type="submit"
+              value="Submit"
+            >
+              Create Account
+            </button>
           </form>
+          <div class="submit-container">
+            <p></p>
+          </div>
         </div>
       </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
