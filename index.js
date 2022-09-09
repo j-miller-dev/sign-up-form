@@ -3,7 +3,10 @@ console.log("working");
 
 const submitButton = document.getElementById("submit-button");
 
-submitButton.addEventListener("click", validateForm());
+submitButton.addEventListener("click", function () {
+  console.log("submit button clicked");
+});
+submitButton.addEventListener("click", validateForm);
 
 // Language: javascript
 function validateForm() {
@@ -60,13 +63,44 @@ function validateForm() {
     return false;
   }
 
-  if (pw1 != pw2) {
-    document.getElementById("message2").innerHTML = "**Passwords are not same";
-    return false;
-  } else {
+  if (pw1 === pw2) {
+    console.log("success");
     alert("Your password created successfully");
     document.write("JavaScript form has been submitted successfully");
+  } else {
+    console.log("passwords are not same");
+    // document.getElementById("message2").innerHTML = "**Passwords are not same";
+    return false;
   }
 }
 
-document.getElementById("myForm").reset();
+function nameValidate() {
+  console.log("Name validation");
+  let name1 = document.getElementById("name1");
+  let name2 = document.getElementById("name2");
+
+  //check empty first name field
+  if (name1 == "") {
+    document.getElementById("blankMsg").innerHTML = "**Fill the first name";
+    return false;
+  }
+  if (name2 == "") {
+    document.getElementById("blankMsg").innerHTML = "**Fill the last name";
+    return false;
+  }
+
+  //character data validation
+  if (!isNaN(name1)) {
+    console.log("only characters are allowed");
+    document.getElementById("charMsg").innerHTML =
+      "**Only characters are allowed";
+    return false;
+  }
+  if (!isNaN(name2)) {
+    document.getElementById("charMsg").innerHTML =
+      "**Only characters are allowed";
+    return false;
+  }
+}
+
+// document.getElementById("myForm").reset();

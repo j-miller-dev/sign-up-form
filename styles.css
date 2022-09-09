@@ -104,28 +104,32 @@ form {
   padding: 2rem;
 }
 
-/* .form-group input[type="text"]:invalid,
-.form-group input[type="email"]:invalid,
-.form-group input[type="password"]:invalid,
-.form-group input[type="tel"]:invalid {
+/* .form-group input[type="text"]:not(:focus):invalid,
+.form-group input[type="email"]:not(:focus):invalid,
+.form-group input[type="tel"]:not(:focus):invalid {
   border: 1px solid #d55c5f;
   color: #d55c5f;
   box-shadow: none;
-} */
-/* Remove default red glow in Firefox */
+}
 
-/* .form-group input[type="password"]:invalid {
+input[type="password"]:not(:focus):invalid {
+  border: 1px solid #f91317;
+  color: #d55c5f;
+  box-shadow: none;
+} */
+
+.form-group input[type="text"]:not(:focus):not(:placeholder-shown):invalid {
   border: 1px solid #d55c5f;
   color: #d55c5f;
-  box-shadow: none; 
-} */
+  box-shadow: none;
+}
 
 .form-group input[type="text"]:valid,
 .form-group input[type="email"]:valid,
 .form-group input[type="password"]:valid,
 .form-group input[type="tel"]:valid {
   border: 1px solid #8adc3d;
-  color: #8adc3d;
+  color: black;
   box-shadow: none; /* Remove default red glow in Firefox */
 }
 
@@ -175,5 +179,5 @@ h2 {
   width: 200px;
   font-size: 12px;
   cursor: pointer;
-  margin-left: 2rem;
+  margin-left: 0rem;
 }

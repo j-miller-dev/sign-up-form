@@ -23,10 +23,12 @@
         <p>You know you want some.</p>
         <div class="form-container">
           <h2>Let's do it!</h2>
-          <form action="" onSubmit="return validateForm()">
+          <form action="">
+            <!-- onSubmit="return validateForm()" -->
             <div class="form-group">
               <label for="name">First Name</label>
               <input
+                onchange="nameValidate()"
                 required
                 autocomplete="off"
                 type="text"
@@ -39,6 +41,7 @@
               <label for="name">Last Name</label>
               <input
                 required
+                onchange="nameValidate()"
                 type="text"
                 id="name2"
                 placeholder="Enter your last name"
@@ -64,7 +67,7 @@
                 id="phone"
                 placeholder="Enter your phone number"
                 autocomplete="off"
-                patter="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+                pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
               />
             </div>
 
@@ -76,8 +79,6 @@
                 required
                 value=""
                 type="password"
-                id="password"
-                placeholder="eg. luna@gmail.com"
                 autocomplete="off"
                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
               />
@@ -91,8 +92,6 @@
                 required
                 value=""
                 type="password"
-                id="password"
-                placeholder="Confirm your password"
                 autocomplete="off"
                 title="Passwords must be identical"
               />
@@ -107,6 +106,7 @@
               Create Account
             </button>
           </form>
+          <p>Already have an account? Log in</p>
           <div class="submit-container">
             <p></p>
           </div>
