@@ -28,31 +28,37 @@
             <div class="form-group">
               <label for="name">First Name</label>
               <input
-                onchange="nameValidate()"
+                class="input"
                 required
                 autocomplete="off"
                 type="text"
                 id="name1"
+                pattern="[A-Za-z]{3,15}"
                 placeholder="Enter your first name"
               />
               <span id="blankMsg" style="color: red"> </span> <br /><br />
+              <span id="charMsg" style="color: red"> </span> <br /><br />
             </div>
             <div class="form-group">
               <label for="name">Last Name</label>
               <input
                 required
-                onchange="nameValidate()"
+                class="input"
                 type="text"
                 id="name2"
+                pattern="[A-Za-z]{3,15}"
                 placeholder="Enter your last name"
                 autocomplete="off"
               />
-              <span id="charMsg" style="color: red"> </span> <br /><br />
+              <span id="charMsg" class="charMsg" style="color: red"> </span>
+              <br /><br />
+              <span id="blankMsg" style="color: red"> </span> <br /><br />
             </div>
             <div class="form-group">
               <label for="email">Email</label>
               <input
                 required
+                class="input"
                 type="email"
                 id="email"
                 placeholder="Enter your email"
@@ -63,6 +69,7 @@
               <label for="phone">Phone</label>
               <input
                 required
+                class="input"
                 type="tel"
                 id="phone"
                 placeholder="Enter your phone number"
@@ -75,21 +82,26 @@
               <label for="password">Password</label>
               <input
                 id="pswd1"
+                onChange="validatePassword()"
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
                 required
+                class="input"
                 value=""
                 type="password"
                 autocomplete="off"
                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
               />
-              <span id="message1" style="color: red"> </span> <br /><br />
+              <span id="message1" class="message1" style="color: red"> </span>
+              <br /><br />
             </div>
             <div class="form-group">
               <label for="password">Confirm Password</label>
               <input
                 id="pswd2"
+                onChange="validatePassword()"
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
                 required
+                class="input"
                 value=""
                 type="password"
                 autocomplete="off"
